@@ -20,7 +20,8 @@ RUN dpkg -i openra.deb
 RUN apt-get -y -f install
 
 # store local game data
-ADD .openra /home/user/.openra
+ADD .openra /home/game/.openra
+RUN chown -R game:game /home/game/.openra
 
 USER game
 
