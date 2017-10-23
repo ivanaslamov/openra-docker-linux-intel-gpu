@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  game:
+    image: openra
+    devices:
+      - "/dev/dri:/dev/dri"
+      - "/dev/snd:/dev/snd"
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:ro"
+      - "/run/user/1000/pulse:/run/pulse:ro"
+    networks:
+      - main
+
+networks:
+  main:
